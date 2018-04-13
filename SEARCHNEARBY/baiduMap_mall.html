@@ -55,7 +55,7 @@
     for (var build_no = 0; build_no < datas.length; build_no++) {
 
         data = searchNearby(datas[build_no]);
-        sleep(1000);
+        sleep(500);
         // window.alert(data);
 
         all_data.push(data);
@@ -63,7 +63,7 @@
 
     function searchNearby(dic) {
         var data = new Array();
-        data.push(dic.buildingN);
+        data.push(dic.name);
         var mPoint = new BMap.Point(dic.longitude, dic.latitude)
         map.centerAndZoom(mPoint, 15);
 

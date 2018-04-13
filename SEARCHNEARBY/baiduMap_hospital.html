@@ -42,12 +42,12 @@
 
 <script src="data.js"></script>
 <script type="text/javascript">
-    window.alert("本次搜索默认搜索全部楼盘周边便利店，如需搜索其他，请前往html文件修改");
+    window.alert("本次搜索默认搜索全部楼盘周边医院，如需搜索其他，请前往html文件修改");
     window.alert("本次搜索时间较长，请保持网络畅通");
     window.alert("开始搜索");
     var all_data = new Array();
     var datas = datas;
-    var myKeys = ['公园', '便利店', '酒店', '商场', '地铁站'];
+    var myKeys = ['公园', '便利店', '酒店', '商场', '地铁站', '医院'];
     var map = new BMap.Map("l-map");
 
 
@@ -82,7 +82,7 @@
             }
         };
         var local = new BMap.LocalSearch(map, options);
-        local.searchNearby(myKeys[1], mPoint, 600);
+        local.searchNearby(myKeys[4], mPoint, 600);
 
         return data;
     }
@@ -101,6 +101,6 @@
         var blob = new Blob([JSON.stringify(all_data)], {
             type: "text/plain;charset=utf-8"
         });
-        saveAs(blob, "store_output.js");
+        saveAs(blob, "underground_output.js");
     }
 </script>

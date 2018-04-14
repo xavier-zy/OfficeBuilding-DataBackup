@@ -55,7 +55,7 @@
     for (var build_no = 0; build_no < datas.length; build_no++) {
 
         data = searchNearby(datas[build_no]);
-        sleep(500);
+        // sleep(500);
         // window.alert(data);
 
         all_data.push(data);
@@ -73,16 +73,16 @@
                 // 判断状态是否正确
                 if (local.getStatus() == BMAP_STATUS_SUCCESS) {
                     data.push(results.getNumPois());
-                    var s = [];
-                    for (var i = 0; i < results.getCurrentNumPois(); i++) {
-                        s.push(results.getPoi(i).title + "@(" + results.getPoi(i).point.lng + "," + results.getPoi(i).point.lat + ")");
-                    }
-                    data.push(s);
+                    // var s = [];
+                    // for (var i = 0; i < results.getCurrentNumPois(); i++) {
+                    //     s.push(results.getPoi(i).title + "@(" + results.getPoi(i).point.lng + "," + results.getPoi(i).point.lat + ")");
+                    // }
+                    // data.push(s);
                 }
             }
         };
         var local = new BMap.LocalSearch(map, options);
-        local.searchNearby(myKeys[0], mPoint, 600);
+        local.searchNearby(myKeys[0], mPoint, 1500);
 
         return data;
     }
@@ -101,6 +101,6 @@
         var blob = new Blob([JSON.stringify(all_data)], {
             type: "text/plain;charset=utf-8"
         });
-        saveAs(blob, "park_output.js");
+        saveAs(blob, "park_output_1500.js");
     }
 </script>

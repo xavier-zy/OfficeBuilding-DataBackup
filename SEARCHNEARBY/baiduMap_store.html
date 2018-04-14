@@ -55,7 +55,7 @@
     for (var build_no = 0; build_no < datas.length; build_no++) {
 
         data = searchNearby(datas[build_no]);
-        sleep(500);
+        // sleep(500);
         // window.alert(data);
 
         all_data.push(data);
@@ -73,11 +73,11 @@
                 // 判断状态是否正确
                 if (local.getStatus() == BMAP_STATUS_SUCCESS) {
                     data.push(results.getNumPois());
-                    var s = [];
-                    for (var i = 0; i < results.getCurrentNumPois(); i++) {
-                        s.push(results.getPoi(i).title + "@(" + results.getPoi(i).point.lng + "," + results.getPoi(i).point.lat + ")");
-                    }
-                    data.push(s);
+                    // var s = [];
+                    // for (var i = 0; i < results.getCurrentNumPois(); i++) {
+                    //     s.push(results.getPoi(i).title + "@(" + results.getPoi(i).point.lng + "," + results.getPoi(i).point.lat + ")");
+                    // }
+                    // data.push(s);
                 }
             }
         };
